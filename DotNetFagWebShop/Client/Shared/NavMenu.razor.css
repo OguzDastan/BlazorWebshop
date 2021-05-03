@@ -11,6 +11,11 @@
     font-size: 1.1rem;
 }
 
+.activeClass {
+    color: green;
+}
+
+
 .oi {
     width: 2rem;
     font-size: 1.1rem;
