@@ -4,14 +4,16 @@ using DotNetFagWebShop.Server.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace DotNetFagWebShop.Server.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210510002356_NewClassesAdded")]
+    partial class NewClassesAdded
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -128,32 +130,6 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                     b.HasIndex("VehicleId");
 
                     b.ToTable("Bookings");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "System",
-                            CustomerId = 1,
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(4949),
-                            DateIn = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(3526),
-                            DateOut = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(4077),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(5393),
-                            UpdatedBy = "System",
-                            VehicleId = 1
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "System",
-                            CustomerId = 2,
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(6688),
-                            DateIn = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(6675),
-                            DateOut = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(6685),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 605, DateTimeKind.Local).AddTicks(6690),
-                            UpdatedBy = "System",
-                            VehicleId = 2
-                        });
                 });
 
             modelBuilder.Entity("DotNetFagWebShop.Shared.Models.Category", b =>
@@ -224,35 +200,6 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Colors");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(1825),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(1841),
-                            Name = "Black",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(1845),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(1848),
-                            Name = "White",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(1851),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(1853),
-                            Name = "Red",
-                            UpdatedBy = "System"
-                        });
                 });
 
             modelBuilder.Entity("DotNetFagWebShop.Shared.Models.Customer", b =>
@@ -280,9 +227,6 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                     b.Property<string>("EmailAddress")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("TaxId")
                         .HasColumnType("nvarchar(max)");
 
@@ -292,34 +236,6 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Customers");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            Address = "Groove Street",
-                            ContactNumber = "42424242",
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(8272),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(8287),
-                            EmailAddress = "g2g@gmai.com",
-                            Name = "John Johnsen",
-                            TaxId = "Denmark",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            Address = "Ringparken 42",
-                            ContactNumber = "33333333",
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(8294),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 606, DateTimeKind.Local).AddTicks(8297),
-                            EmailAddress = "ring22@live.com",
-                            Name = "Bo Bill",
-                            TaxId = "Denmark",
-                            UpdatedBy = "System"
-                        });
                 });
 
             modelBuilder.Entity("DotNetFagWebShop.Shared.Models.Make", b =>
@@ -347,35 +263,6 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Makes");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(2279),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(2293),
-                            Name = "Toyota",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(2299),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(2302),
-                            Name = "Mercedes-Benz",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(2305),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(2307),
-                            Name = "Skoda",
-                            UpdatedBy = "System"
-                        });
                 });
 
             modelBuilder.Entity("DotNetFagWebShop.Shared.Models.Model", b =>
@@ -403,62 +290,6 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Models");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7165),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7180),
-                            Name = "Aygo",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7185),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7188),
-                            Name = "Yaris",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7191),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7193),
-                            Name = "E200",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7196),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7198),
-                            Name = "C200",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 5,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7201),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7203),
-                            Name = "Octavia",
-                            UpdatedBy = "System"
-                        },
-                        new
-                        {
-                            Id = 6,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7206),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 607, DateTimeKind.Local).AddTicks(7208),
-                            Name = "Superb",
-                            UpdatedBy = "System"
-                        });
                 });
 
             modelBuilder.Entity("DotNetFagWebShop.Shared.Models.Product", b =>
@@ -506,7 +337,7 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                         {
                             Id = 1,
                             CategoryId = 1,
-                            Created = new DateTime(2021, 5, 10, 2, 51, 55, 601, DateTimeKind.Local).AddTicks(1590),
+                            Created = new DateTime(2021, 5, 10, 2, 23, 55, 620, DateTimeKind.Local).AddTicks(3598),
                             DateCreated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             DateUpdated = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Desc = "Test product",
@@ -564,38 +395,6 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                     b.HasIndex("ModelId");
 
                     b.ToTable("Vehicles");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            ColorId = 1,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 608, DateTimeKind.Local).AddTicks(4093),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 608, DateTimeKind.Local).AddTicks(4108),
-                            LicensePlateNumber = "AB 123 22",
-                            MakeId = 1,
-                            ModelId = 1,
-                            RentalRate = 1499.95,
-                            UpdatedBy = "System",
-                            Vin = "SADLKASJLKDLJKASDJKASLKJDKAS",
-                            Year = 2018
-                        },
-                        new
-                        {
-                            Id = 2,
-                            ColorId = 2,
-                            CreatedBy = "System",
-                            DateCreated = new DateTime(2021, 5, 10, 2, 51, 55, 608, DateTimeKind.Local).AddTicks(4113),
-                            DateUpdated = new DateTime(2021, 5, 10, 2, 51, 55, 608, DateTimeKind.Local).AddTicks(4115),
-                            LicensePlateNumber = "ZE 321 44",
-                            MakeId = 2,
-                            ModelId = 2,
-                            RentalRate = 2499.9499999999998,
-                            UpdatedBy = "System",
-                            Vin = "OPSAIDPOASFIPPIOOPFASI",
-                            Year = 2020
-                        });
                 });
 
             modelBuilder.Entity("IdentityServer4.EntityFramework.Entities.DeviceFlowCodes", b =>
@@ -731,14 +530,14 @@ namespace DotNetFagWebShop.Server.Data.Migrations
                         new
                         {
                             Id = "1",
-                            ConcurrencyStamp = "f9144d91-e666-4003-b51f-9a0fcfa307f1",
+                            ConcurrencyStamp = "72aeb46e-fb73-4774-a97b-16df675ead77",
                             Name = "User",
                             NormalizedName = "USER"
                         },
                         new
                         {
                             Id = "2",
-                            ConcurrencyStamp = "1f11dfd0-5f4e-4f53-91a7-5d083e7629e8",
+                            ConcurrencyStamp = "57817ef4-7d69-48d8-983e-d7746cdf03d5",
                             Name = "Administrator",
                             NormalizedName = "ADMIN"
                         });
