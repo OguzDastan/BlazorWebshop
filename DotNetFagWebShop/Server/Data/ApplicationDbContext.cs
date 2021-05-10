@@ -39,6 +39,7 @@ namespace DotNetFagWebShop.Server.Data
 
             // identity roles
             builder.ApplyConfiguration(new RoleSeedConfig());
+            builder.ApplyConfiguration(new UserSeedConfig());
 
             // webshop products
             builder.ApplyConfiguration(new ProductSeedConfig());
